@@ -22,7 +22,7 @@ export class ProductService {
   }
 
   addProduct(product: any): Observable<any> {
-    return this.http.post('http://localhost:8000/product/new', product);
+    return this.http.post<any>('http://localhost:8000/product/new', product);
   }
 
   // /**

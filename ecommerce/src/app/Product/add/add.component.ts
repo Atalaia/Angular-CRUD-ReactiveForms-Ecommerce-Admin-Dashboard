@@ -24,7 +24,6 @@ export class AddComponent implements OnInit {
     private tagService: TagService) 
     {
     this.addForm = this.formBuilder.group({
-      id: [],
       name: new FormControl(''),
       price: new FormControl(''),
       photo: new FormControl(''),
@@ -61,9 +60,11 @@ export class AddComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.addForm.value);
+    
     this.productService.addProduct(this.addForm.value)
       .subscribe(data => {
-        this.router.navigate(['product']);
+        this.router.navigate(['/product']);
       });
   }
 }
