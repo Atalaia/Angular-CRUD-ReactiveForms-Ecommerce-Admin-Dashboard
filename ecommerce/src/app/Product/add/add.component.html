@@ -1,33 +1,36 @@
-<div class="col-md-6 user-container">
+<div class="col-md-6 container">
     <h2 class="text-center">Add New Product</h2>
     <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" formControlName="name" placeholder="name" name="name" class="form-control" id="name">
         </div>
-
         <div class="form-group">
             <label for="price">Price:</label>
             <input type="price" formControlName="price" placeholder="price" name="price" class="form-control"
                 id="price">
         </div>
-
         <div class="form-group">
             <label for="photo">Photo URL:</label>
-            <input formControlName="photo" placeholder="Photo URL" name="photo" class="form-control" id="photo">
+            <input formControlName="photo" placeholder="photo URL" name="photo" class="form-control" id="photo">
         </div>
-
+        
         <div class="form-group">
-            <label for="category">Category:</label>
-            <input formControlName="category" placeholder="Category" name="category" class="form-control"
-                id="category">
+            <label for="category">Category</label>
+            <select formControlName="category" id="category" class="category">
+                <option *ngFor="let c of category; let i = index" [value]="category[i].id">
+                    {{category[i].name}}
+                </option>
+            </select>
         </div>
 
-        <!-- <div class="form-group">
-            <div *ngFor="let tag of tags.controls; let i=index">
-                <input type="checkbox" [formControl]="tag" /> {{product.tags[i].name}}
-            </div> 
-        </div> -->
+        <div>
+            <label class="tags" formArrayName="tags"
+                *ngFor="let tag of addForm['controls'].tags['controls']; let i = index">
+                <input type="checkbox" [formControlName]="i" />
+                {{tagsData[i].name}}
+            </label>
+        </div>
 
         <button class="btn btn-success">Submit</button>
     </form>
