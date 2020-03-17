@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Categories Index</h2>
+    <a href="category/add">Add New Category</a>
+    <div class="table-responsive-md">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Category ID</th>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of categories">
+                    <td scope="row">{{category.id}}</td>
+                    <td>{{category.name}}</td>
+                    <td>
+                       <a href="category/edit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Edit_icon_%28the_Noun_Project_30184%29.svg/1200px-Edit_icon_%28the_Noun_Project_30184%29.svg.png" 
+                        alt="Edit" width="30px"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="col-md-6 user-container">
+    <h2 class="text-center">Add New Product</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" formControlName="name" placeholder="name" name="name" class="form-control" id="name">
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="price" formControlName="price" placeholder="price" name="price" class="form-control"
+                id="price">
+        </div>
+
+        <div class="form-group">
+            <label for="photo">Photo URL:</label>
+            <input formControlName="photo" placeholder="First Name" name="photo" class="form-control" id="photo">
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <input formControlName="category" placeholder="Last name" name="category" class="form-control"
+                id="category">
+        </div>
+
+        <!-- <div class="form-group">
+            <div *ngFor="let tag of tags.controls; let i=index">
+                <input type="checkbox" [formControl]="tag" /> {{product.tags[i].name}}
+            </div> 
+        </div> -->
+
+        <button class="btn btn-success">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Tags Index</h2>
+    <a href="tag/add">Add New Tag</a>
+    <div class="table-responsive-md">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Tag ID</th>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tag of tags">
+                    <td scope="row">{{tag.id}}</td>
+                    <td>{{tag.name}}</td>
+                    <td>
+                        <a href="tag/edit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Edit_icon_%28the_Noun_Project_30184%29.svg/1200px-Edit_icon_%28the_Noun_Project_30184%29.svg.png" 
+                        alt="Edit" width="30px"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

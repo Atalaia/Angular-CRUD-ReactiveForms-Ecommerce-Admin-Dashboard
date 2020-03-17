@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Products Index</h2>
+    <a href="product/add">Add New Product</a>
+    <div class="table-responsive-md">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Photo URL</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Tags</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products, let i=index">
+                    <td scope="row">{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.photo}}</td>
+                    <td>{{product.category.name}}</td>
+                    <td>
+                        <ul *ngFor="let tag of product.tag">
+                            <li>{{tag.name}}</li>
+                        </ul>               
+                    </td>
+                    <td>
+                        <a href="/product/edit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Edit_icon_%28the_Noun_Project_30184%29.svg/1200px-Edit_icon_%28the_Noun_Project_30184%29.svg.png" 
+                        alt="Edit" width="30px"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

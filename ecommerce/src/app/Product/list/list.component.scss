@@ -1,0 +1,32 @@
+* {
+    font-family: "Trebuchet MS", Arial, Herlvetica, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: royalblue;
+}
+
+
+.table {
+    margin-top: 1em;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+}
+
+.table td, th {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: royalblue;
+    color: white;
+}
