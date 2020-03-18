@@ -25,9 +25,9 @@
         </div>
 
         <div>
-            <label class="tags" formArrayName="tags"
-                *ngFor="let tag of addForm['controls'].tags['controls']; let i = index">
-                <input type="checkbox" [formControlName]="i" />
+            <label class="tag" formArrayName="tag"
+                *ngFor="let t of addForm['controls'].tag['controls']; let i = index">
+                <input type="checkbox" [formControlName]="i" value="{{tagsData[i].id}}"/>
                 {{tagsData[i].name}}
             </label>
         </div>

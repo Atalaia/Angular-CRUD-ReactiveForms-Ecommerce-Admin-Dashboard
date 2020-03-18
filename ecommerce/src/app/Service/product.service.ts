@@ -12,7 +12,7 @@ export class ProductService {
   constructor(private http:HttpClient, private errorHandlerService: ErrorhandlerService) { }
 
   getProducts(): Observable<any> {
-    return this.http.get('http://localhost:8000/product')
+    return this.http.get<any>('http://localhost:8000/product')
     .pipe(
       tap(data => {
         console.log(data);
@@ -24,6 +24,8 @@ export class ProductService {
   addProduct(product: any): Observable<any> {
     return this.http.post<any>('http://localhost:8000/product/new', product);
   }
+
+  
 
   // /**
   //  * Handle Http operation that failed.
