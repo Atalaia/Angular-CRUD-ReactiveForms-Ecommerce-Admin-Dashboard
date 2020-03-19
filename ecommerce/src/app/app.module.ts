@@ -16,6 +16,7 @@ import { EditComponent as TagEdit } from './Tag/edit/edit.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { DeleteComponent } from './Product/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CommonModule } from '@angular/common';
     CategoryEdit,
     TagList,
     TagAdd,
-    TagEdit
+    TagEdit,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

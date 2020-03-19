@@ -1,0 +1,17 @@
+<div class="col-md-6 container">
+    <div class="card" style="width:400px">
+        <h4 class="text-center">Are you sure you want to delete this product?</h4>
+        <img class="card-img-top" src="{{product.photo}}" alt="product image">
+        <div class="card-body">
+            <h4 class="card-title">{{product.name}}</h4>
+            <p class="card-text">Price: {{product.price}}€</p>
+            <p class="card-text">Category: {{product.category.name}}</p>
+            <div class="tags">
+                <p class="card-text">Tags:</p>
+                <span *ngFor="let t of product.tag; let i = index" class="tag card-text">#{{product.tag[i].name}}</span>
+            </div>
+            <button (click)="deleteProduct(product.id)" class="btn btn-primary">Delete</button>
+            <a href="product/edit/{{product.id}}" class="btn btn-primary">Edit</a>
+        </div>
+    </div>
+</div>
