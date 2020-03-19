@@ -11,11 +11,7 @@ export class DeleteComponent implements OnInit {
 
   category:any = {
     _id: null,
-    name: '',
-    price: null,
-    photo: '',
-    category: null,
-    tag: []
+    name: ''
   }
 
 

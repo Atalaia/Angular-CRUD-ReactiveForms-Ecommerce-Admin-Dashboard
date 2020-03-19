@@ -1,1 +1,11 @@
-<p>add works!</p>
+<div class="col-md-6 container">
+    <h2 class="text-center">Add New Tag</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit(addForm.value)">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" formControlName="name" placeholder="name" name="name" class="form-control" id="name">
+        </div>
+        
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>

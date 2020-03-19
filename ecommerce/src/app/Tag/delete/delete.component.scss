@@ -1,0 +1,36 @@
+.card {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 10px;
+  width: 100px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-top: 1em;
+  margin-right: 1em;
+  align-content: center;
+}
+
+.btn:hover { 
+    background-color: #3e8e41;
+    color: white;
+}
+
+.btn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
