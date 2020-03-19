@@ -17,9 +17,10 @@ export class EditComponent implements OnInit {
   name: string = '';
   price: number = null;
   photo: string = '';
-  category: number = null;
-  tag: Array<any> = [];
-  isLoadingResults = false;
+  category: any;
+  tag: any;
+  categoryPrevious: any;
+  tagPrevious: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,9 +29,8 @@ export class EditComponent implements OnInit {
     private productService: ProductService,
     private categoryService: CategoryService,
     private tagService: TagService
-  ) { }
-
-  ngOnInit(): void {
+  ) 
+  {
     this.getProduct(this.route.snapshot.params['id']);
     this.editForm = this.formBuilder.group({
       name: [null, Validators.required],
@@ -39,11 +39,14 @@ export class EditComponent implements OnInit {
       category: [this.getCategories(), Validators.required],
       tag: [this.getTags(), Validators.required],
     });
+    console.log(this.editForm);
   }
+
+  ngOnInit(): void { }
 
   getProduct(id) {
     this.productService.getProduct(id).subscribe(data => {
-      this._id = data._id;
+      this._id = data.id;   
       this.editForm.setValue({
         name: data.name,
         price: data.price,
@@ -51,21 +54,9 @@ export class EditComponent implements OnInit {
         category: data.category,
         tag: data.tag
       });
-    });
-  }
-
-  getTags() {
-    this.tagService.getTags()
-      .subscribe(data => {
-        this.tag = data;
-        this.addCheckBoxes();
-      });
-  }
-
-  addCheckBoxes() {
-    this.tag.forEach((t, i) => {
-      const control = new FormControl(i === 0); // if first item set to true, else false
-      (this.editForm['controls'].tag as FormArray).push(control);
+      this.categoryPrevious = data.category;
+      this.tagPrevious = data.tag;
+      console.log(this.tagPrevious);
     });
   }
 
@@ -76,28 +67,27 @@ export class EditComponent implements OnInit {
       });
   }
 
+  getTags() {
+    this.tagService.getTags()
+      .subscribe(data => {
+        this.tag = data;
+        console.log(this.tag)
+      });
+  }
 
   onFormSubmit(form: NgForm) {
-    this.isLoadingResults = true;
-
-    const selectedTagIds = this.editForm.value.tag
-      .map((v, i) => (v ? this.tag[i].id : null))
-      .filter(v => v !== null);
-    console.log(selectedTagIds);
-
-    this.editForm.value.tag = selectedTagIds;
 
     console.log(this.editForm.value);
     console.log(form);
-
+    console.log(this._id);
+    
     this.productService.editProduct(this._id, form)
       .subscribe(res => {
         let id = res['_id'];
-        this.isLoadingResults = false;
+   
         this.router.navigate(['/product']);
       }, (err) => {
         console.log(err);
-        this.isLoadingResults = false;
       }
       );
   }
