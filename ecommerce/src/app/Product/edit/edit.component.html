@@ -19,6 +19,7 @@
             <label for="category">Category</label>
             <select formControlName="category" id="category" class="category">
                 <option [defaultSelected]=true [value]="categoryPrevious">{{categoryPrevious?.name}}</option>
+                <option>---- Choose a new category below ----</option>
                 <option *ngFor="let c of category; let i = index" [value]="category[i].id">
                     {{category[i].name}}
                 </option>
@@ -28,6 +29,8 @@
         <div class="form-group">
             <label for="tag">Tags</label>
             <select multiple formControlName="tag" id="tag" class="tag">
+                <option *ngFor="let tag of tagPrevious; let i = index" [defaultSelected]=true [value]="tag">{{tag?.name}}</option>
+                <option>---- Choose new tag(s) below ----</option>
                 <option *ngFor="let t of tag; let i = index" [value]="tag[i].id">
                     {{tag[i].name}}
                 </option>

@@ -77,9 +77,14 @@ export class EditComponent implements OnInit {
 
   onFormSubmit(form: NgForm) {
 
-    console.log(this.editForm.value);
+    console.log(this.editForm.value.category.id);
     console.log(form);
     console.log(this._id);
+
+    const updatedCategory = this.editForm.value.category.id;
+    this.editForm.value.category = updatedCategory;
+
+    console.log(form);
     
     this.productService.editProduct(this._id, form)
       .subscribe(res => {
