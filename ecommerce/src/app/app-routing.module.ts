@@ -13,6 +13,7 @@ import { EditComponent as EditTag } from './Tag/edit/edit.component';
 import { DeleteComponent as DeleteCategory } from './Category/delete/delete.component';
 import { DeleteComponent as DeleteProduct } from './Product/delete/delete.component';
 import { DeleteComponent as DeleteTag } from './Tag/delete/delete.component';
+import { SalesChartsComponent as SalesCharts } from './sales-charts/sales-charts.component';
 
 import { CommonModule } from '@angular/common';
 
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path:'tag/edit/:id', component: EditTag },
   { path:'category/delete/:id', component: DeleteCategory },
   { path:'product/delete/:id', component: DeleteProduct },
-  { path:'tag/delete/:id', component: DeleteTag }
+  { path:'tag/delete/:id', component: DeleteTag },
+  { path:'sale', component: SalesCharts }
 ];
 
 @NgModule({

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/Service/category.service';
 
 @Component({
-  selector: 'app-list',
+  selector: 'app-list-category',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })

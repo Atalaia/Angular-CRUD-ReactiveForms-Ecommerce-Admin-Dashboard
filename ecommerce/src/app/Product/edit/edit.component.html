@@ -29,8 +29,8 @@
         <div class="form-group">
             <label for="tag">Tags</label>
             <select multiple formControlName="tag" id="tag" class="tag">
-                <option *ngFor="let tag of tagPrevious; let i = index" [defaultSelected]=true [value]="tag">{{tag?.name}}</option>
-                <option>---- Choose new tag(s) below ----</option>
+                <!-- <option *ngFor="let tag of tagPrevious; let i = index" [defaultSelected]=true [value]="tag">{{tag?.name}}</option> -->
+                <option>-- Choose tag(s) below --</option>
                 <option *ngFor="let t of tag; let i = index" [value]="tag[i].id">
                     {{tag[i].name}}
                 </option>

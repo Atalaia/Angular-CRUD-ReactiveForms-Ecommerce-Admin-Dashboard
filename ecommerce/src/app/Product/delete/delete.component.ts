@@ -3,7 +3,7 @@ import { ProductService } from 'src/app/Service/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-delete',
+  selector: 'app-delete-product',
   templateUrl: './delete.component.html',
   styleUrls: ['./delete.component.scss']
 })

@@ -3,7 +3,7 @@ import { TagService } from 'src/app/Service/tag.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-delete',
+  selector: 'app-delete-tag',
   templateUrl: './delete.component.html',
   styleUrls: ['./delete.component.scss']
 })

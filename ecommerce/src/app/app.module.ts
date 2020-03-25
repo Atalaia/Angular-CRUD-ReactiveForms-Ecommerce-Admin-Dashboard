@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { ChartsModule } from 'ng2-charts';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent as ProductList } from './Product/list/list.component';
@@ -12,11 +14,13 @@ import { EditComponent as CategoryEdit } from './Category/edit/edit.component';
 import { ListComponent as TagList } from './Tag/list/list.component';
 import { AddComponent as TagAdd } from './Tag/add/add.component';
 import { EditComponent as TagEdit } from './Tag/edit/edit.component';
+import { DeleteComponent } from './Product/delete/delete.component';
+import { SalesChartsComponent } from './sales-charts/sales-charts.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { DeleteComponent } from './Product/delete/delete.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { DeleteComponent } from './Product/delete/delete.component';
     TagList,
     TagAdd,
     TagEdit,
-    DeleteComponent
+    DeleteComponent,
+    SalesChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,8 @@ import { DeleteComponent } from './Product/delete/delete.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule, 
-    [CommonModule]
+    [CommonModule],
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

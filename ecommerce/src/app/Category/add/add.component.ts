@@ -11,18 +11,17 @@ import { CategoryService } from 'src/app/Service/category.service';
 export class AddComponent implements OnInit {
 
   addForm: FormGroup;
-  
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private categoryService: CategoryService) 
-    {
+    private categoryService: CategoryService) {
     this.addForm = this.formBuilder.group({
       name: new FormControl('')
     });
   }
 
-  ngOnInit():void { }
+  ngOnInit(): void { }
 
   onSubmit(form: NgForm) {
 
@@ -32,7 +31,10 @@ export class AddComponent implements OnInit {
       .subscribe(data => {
         console.log("Category added");
         this.router.navigate(['/category']);
-      });
+      }, (err) => {
+        console.log(err);
+      }
+      );
   }
 
 }

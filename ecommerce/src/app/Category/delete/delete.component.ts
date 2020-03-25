@@ -3,7 +3,7 @@ import { CategoryService } from 'src/app/Service/category.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-delete',
+  selector: 'app-delete-category',
   templateUrl: './delete.component.html',
   styleUrls: ['./delete.component.scss']
 })
